@@ -1,5 +1,7 @@
 package com.quantitymeasurement;
 
+import java.util.Objects;
+
 public enum Unit {
     INCH(0.12), FEET(12);
 
@@ -8,4 +10,6 @@ public enum Unit {
     Unit(double value) {
         this.value = value;
     }
+
 }
+

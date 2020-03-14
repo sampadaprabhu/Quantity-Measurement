@@ -39,4 +39,23 @@ public class QuantityMeasurementTest {
         boolean equals = quantityMeasurement.equals(measurement);
         Assert.assertFalse(equals);
     }
+
+    @Test
+    public void givenNullObjectReference_WhenEqual_ShouldReturnFalse() {
+        QuantityMeasurement quantityMeasurement =null;
+        boolean equals = measurement.equals(quantityMeasurement);
+        Assert.assertFalse(equals);
+    }
+
+    @Test
+    public void givenType_WhenNotEqual_ShouldReturnFalse() {
+        boolean equals = measurement.equals(new QuantityMeasurementTest());
+        Assert.assertFalse(equals);
+    }
+
+    @Test
+    public void givenSameReferenceForSameClass_WhenEqual_ShouldReturnTrue() {
+        boolean equals = measurement.equals(measurement);
+        Assert.assertTrue(equals);
+    }
 }
