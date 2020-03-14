@@ -19,7 +19,7 @@ public class QuantityMeasurement {
         return Double.compare(that.measurement, measurement) == 0;
     }
 
-    public double convert(int inch, Unit inchUnit) {
-            return Math.round(inch*inchUnit.value);
+    public double convert(int quantity, Unit unit) {
+            return Math.round(quantity*unit.value);
     }
 }
