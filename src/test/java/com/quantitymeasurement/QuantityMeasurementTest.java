@@ -58,4 +58,34 @@ public class QuantityMeasurementTest {
         boolean equals = measurement.equals(measurement);
         Assert.assertTrue(equals);
     }
+
+    @Test
+    public void givenFeetAndInch_WhenZero_ShouldReturnEqual() {
+        double result = measurement.convert(0, Unit.INCH);
+        Assert.assertEquals(0,result,0.0);
+    }
+
+    @Test
+    public void given1FeetAnd1Inch_WhenNotEqual_ShouldReturnFalse() {
+        double result = measurement.convert(1, Unit.INCH);
+        Assert.assertNotEquals(1,result,0.0);
+    }
+
+    @Test
+    public void given1InchAnd1Feet_WhenNotEqual_ShouldReturnFalse() {
+        double result = measurement.convert(1, Unit.FEET);
+        Assert.assertNotEquals(1,result,0.0);
+    }
+
+     @Test
+    public void given1Feet12Inch_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(12, Unit.INCH);
+        Assert.assertEquals(1,result,0.0);
+    }
+
+    @Test
+    public void given12Feet1Inch_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(1, Unit.FEET);
+        Assert.assertEquals(12,result,0.0);
+    }
 }
