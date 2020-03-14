@@ -9,33 +9,33 @@ public class QuantityMeasurementTest {
 
     @Before
     public void setUp() throws Exception {
-        measurement=new QuantityMeasurement();
+        measurement = new QuantityMeasurement();
     }
 
     @Test
     public void givenFeetValueZero_WhenEqual_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(0,0);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(0, Unit.FEET);
         boolean equalCheck = quantityMeasurement.equals(measurement);
         Assert.assertTrue(equalCheck);
     }
 
     @Test
     public void givenFeetValueZero_WhenNotEqual_ShouldReturnFalse() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(12,0);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(12, Unit.FEET);
         boolean equalCheck = quantityMeasurement.equals(measurement);
         Assert.assertFalse(equalCheck);
     }
 
     @Test
     public void givenInchValueZero_WhenEqual_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement=new QuantityMeasurement(0,0);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(0, Unit.INCH);
         boolean equals = quantityMeasurement.equals(measurement);
         Assert.assertTrue(equals);
     }
 
     @Test
     public void givenInchValueZero_WhenNotEqual_ShouldReturnFalse() {
-        QuantityMeasurement quantityMeasurement=new QuantityMeasurement(0,12);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(12, Unit.INCH);
         boolean equals = quantityMeasurement.equals(measurement);
         Assert.assertFalse(equals);
     }

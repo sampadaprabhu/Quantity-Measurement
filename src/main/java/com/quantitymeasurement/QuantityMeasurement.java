@@ -1,18 +1,12 @@
 package com.quantitymeasurement;
 
-import java.util.Objects;
-
 public class QuantityMeasurement {
-    double feetValue;
-    double inchValue;
+    double measurement;
 
-    public QuantityMeasurement(double value,double inchValue) {
-        feetValue=value;
-        this.inchValue=inchValue;
-    }
+    public QuantityMeasurement() { }
 
-
-    public QuantityMeasurement() {
+    public QuantityMeasurement(int value, Unit feet) {
+        this.measurement = value * feet.value;
     }
 
     @Override
@@ -20,7 +14,8 @@ public class QuantityMeasurement {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         QuantityMeasurement that = (QuantityMeasurement) o;
-        return Double.compare(that.feetValue, feetValue) == 0 &&
-                Double.compare(that.inchValue, inchValue) == 0;
+        return Double.compare(that.measurement, measurement) == 0;
+
     }
+
 }
