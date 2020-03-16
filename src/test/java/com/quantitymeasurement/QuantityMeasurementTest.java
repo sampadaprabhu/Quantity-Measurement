@@ -123,4 +123,10 @@ public class QuantityMeasurementTest {
         double result = measurement.convert(3,Unit.FEET_TO_YARD);
         Assert.assertEquals(1,result,0.0);
     }
+
+    @Test
+    public void given2Inch5CM_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(2, Unit.INCH_TO_CENTIMETER);
+        Assert.assertEquals(5,result,0.0);
+    }
 }
