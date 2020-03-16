@@ -22,4 +22,8 @@ public class QuantityMeasurement {
     public double convert(int quantity, Unit unit) {
             return Math.round(quantity*unit.value);
     }
+
+    public double additionOfTwoUnits(Unit unit1, Unit unit2){
+        return  (Math.round(unit1.value)+Math.round(unit2.value));
+    }
 }

@@ -129,4 +129,28 @@ public class QuantityMeasurementTest {
         double result = measurement.convert(2, Unit.INCH_TO_CENTIMETER);
         Assert.assertEquals(5,result,0.0);
     }
+
+    @Test
+    public void givenAdditionOf2InchAnd2Inch_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.additionOfTwoUnits(Unit.INCH, Unit.INCH);
+        Assert.assertEquals(4,result,0.0);
+    }
+
+    @Test
+    public void givenAdditionOf1Feet2Inch_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.additionOfTwoUnits(Unit.INCH_TO_FEET, Unit.INCH);
+        Assert.assertEquals(14,result,0.0);
+    }
+
+    @Test
+    public void givenAdditionOf1Feet1Feet_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.additionOfTwoUnits(Unit.INCH_TO_FEET, Unit.INCH_TO_FEET);
+        Assert.assertEquals(24,result,0.0);
+    }
+
+    @Test
+    public void givenAdditionOfInchAndCentimeter_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.additionOfTwoUnits(Unit.CENTIMETER_TO_INCH, Unit.INCH);
+        Assert.assertEquals(3,result,0.0);
+    }
 }
