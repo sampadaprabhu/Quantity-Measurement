@@ -14,28 +14,28 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenFeetValueZero_WhenEqual_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(0, Unit.INCH_TO_FEET);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(0, Unit.FEET_TO_INCH);
         boolean equalCheck = quantityMeasurement.equals(measurement);
         Assert.assertTrue(equalCheck);
     }
 
     @Test
     public void givenFeetValueZero_WhenNotEqual_ShouldReturnFalse() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(12, Unit.INCH_TO_FEET);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(12, Unit.FEET_TO_INCH);
         boolean equalCheck = quantityMeasurement.equals(measurement);
         Assert.assertFalse(equalCheck);
     }
 
     @Test
     public void givenInchValueZero_WhenEqual_ShouldReturnTrue() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(0, Unit.FEET_TO_INCH);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(0, Unit.INCH_TO_FEET);
         boolean equals = quantityMeasurement.equals(measurement);
         Assert.assertTrue(equals);
     }
 
     @Test
     public void givenInchValueZero_WhenNotEqual_ShouldReturnFalse() {
-        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(12, Unit.FEET_TO_INCH);
+        QuantityMeasurement quantityMeasurement = new QuantityMeasurement(12, Unit.INCH_TO_FEET);
         boolean equals = quantityMeasurement.equals(measurement);
         Assert.assertFalse(equals);
     }
@@ -61,31 +61,31 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenFeetAndInch_WhenZero_ShouldReturnEqual() {
-        double result = measurement.convert(0, Unit.FEET_TO_INCH);
+        double result = measurement.convert(0, Unit.INCH_TO_FEET);
         Assert.assertEquals(0,result,0.0);
     }
 
     @Test
     public void given1FeetAnd1Inch_WhenNotEqual_ShouldReturnFalse() {
-        double result = measurement.convert(1, Unit.FEET_TO_INCH);
+        double result = measurement.convert(1, Unit.INCH_TO_FEET);
         Assert.assertNotEquals(1,result,0.0);
     }
 
     @Test
     public void given1InchAnd1Feet_WhenNotEqual_ShouldReturnFalse() {
-        double result = measurement.convert(1, Unit.INCH_TO_FEET);
+        double result = measurement.convert(1, Unit.FEET_TO_INCH);
         Assert.assertNotEquals(1,result,0.0);
     }
 
      @Test
     public void given1Feet12Inch_WhenEqual_ShouldReturnTrue() {
-        double result = measurement.convert(12, Unit.FEET_TO_INCH);
+        double result = measurement.convert(12, Unit.INCH_TO_FEET);
         Assert.assertEquals(1,result,0.0);
     }
 
     @Test
     public void given12Feet1Inch_WhenEqual_ShouldReturnTrue() {
-        double result = measurement.convert(1, Unit.INCH_TO_FEET);
+        double result = measurement.convert(1, Unit.FEET_TO_INCH);
         Assert.assertEquals(12,result,0.0);
     }
 
@@ -114,8 +114,8 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given36Inch1Yard_WhenEqual_ShouldReturnTrue() {
-        double reult = measurement.convert(1,Unit.YARD_TO_INCH);
-        Assert.assertEquals(36,reult,0.0);
+        double result = measurement.convert(1,Unit.YARD_TO_INCH);
+        Assert.assertEquals(36,result,0.0);
     }
 
     @Test
@@ -138,13 +138,13 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenAdditionOf1Feet2Inch_WhenEqual_ShouldReturnTrue() {
-        double result = measurement.additionOfTwoUnits(Unit.INCH_TO_FEET, Unit.INCH);
+        double result = measurement.additionOfTwoUnits(Unit.FEET_TO_INCH, Unit.INCH);
         Assert.assertEquals(14,result,0.0);
     }
 
     @Test
     public void givenAdditionOf1Feet1Feet_WhenEqual_ShouldReturnTrue() {
-        double result = measurement.additionOfTwoUnits(Unit.INCH_TO_FEET, Unit.INCH_TO_FEET);
+        double result = measurement.additionOfTwoUnits(Unit.FEET_TO_INCH, Unit.FEET_TO_INCH);
         Assert.assertEquals(24,result,0.0);
     }
 
@@ -152,5 +152,17 @@ public class QuantityMeasurementTest {
     public void givenAdditionOfInchAndCentimeter_WhenEqual_ShouldReturnTrue() {
         double result = measurement.additionOfTwoUnits(Unit.CENTIMETER_TO_INCH, Unit.INCH);
         Assert.assertEquals(3,result,0.0);
+    }
+
+    @Test
+    public void givenGallonAndLitres_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(1, Unit.GALLON_TO_LITRE);
+        Assert.assertEquals(4,result,0.0);
+    }
+
+    @Test
+    public void givenLitreAndMilliLitre_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(1, Unit.LITRE_TO_ML);
+        Assert.assertEquals(1000,result,0.0);
     }
 }
