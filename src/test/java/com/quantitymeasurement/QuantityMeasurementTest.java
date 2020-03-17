@@ -178,4 +178,22 @@ public class QuantityMeasurementTest {
         double result = measurement.additionOfTwoUnits(Unit.ML_TO_LITRE, Unit.ML_TO_LITRE);
         Assert.assertEquals(2, result, 0.0);
     }
+
+    @Test
+    public void givenKGAndGrams_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(1, Unit.KG_TO_GRAMS);
+        Assert.assertEquals(1000, result, 0.0);
+    }
+
+    @Test
+    public void givenTonneAndKG_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(1, Unit.TONNE_TO_KG);
+        Assert.assertEquals(1000, result, 0.0);
+    }
+
+    @Test
+    public void givenAdditionOfTonneAndGrams_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.additionOfTwoUnits(Unit.TONNE_TO_KG, Unit.GRAMS_TO_KG);
+        Assert.assertEquals(1001, result, 0.0);
+    }
 }
