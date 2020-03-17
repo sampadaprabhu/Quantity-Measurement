@@ -18,8 +18,7 @@ public enum Unit {
     KG_TO_GRAMS(1000),
     TONNE_TO_KG(1000),
     GRAMS_TO_KG(1),
-    FAHRENHEIT_TO_CELSIUS(0.4717),
-    CELSIUS_TO_FAHRENHEIT(2.12);
+    FAHRENHEIT_TO_CELSIUS(0.4717);
     public double value;
 
     Unit(double value) {

@@ -196,4 +196,10 @@ public class QuantityMeasurementTest {
         double result = measurement.additionOfTwoUnits(Unit.TONNE_TO_KG, Unit.GRAMS_TO_KG);
         Assert.assertEquals(1001, result, 0.0);
     }
+
+    @Test
+    public void givenCelsiusAndFahrenheit_WhenEqual_ShouldReturnTrue() {
+        double result = measurement.convert(212, Unit.FAHRENHEIT_TO_CELSIUS);
+        Assert.assertEquals(100, result, 0.0);
+    }
 }
