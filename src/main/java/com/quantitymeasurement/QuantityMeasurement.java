@@ -1,29 +1,26 @@
 package com.quantitymeasurement;
 
 public class QuantityMeasurement {
-    double measurement;
+    Unit unit;
+    double quantity;
 
-    public QuantityMeasurement() {
-    }
-
-    public QuantityMeasurement(int value, Unit unitType) {
-        this.measurement = value * unitType.value;
+    public QuantityMeasurement(double value, Unit unit) {
+        quantity = value;
+        this.unit = unit;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (o == null || getClass() != o.getClass()) return false;
         QuantityMeasurement that = (QuantityMeasurement) o;
-        return Double.compare(that.measurement, measurement) == 0;
+        if (that.unit == null) return false;
+        if (unit.unitType == null || that.unit.unitType == null || unit.unitType != that.unit.unitType) return false;
+        return Double.compare(that.quantity * that.unit.baseUnit, this.quantity * this.unit.baseUnit) == 0;
     }
 
-    public double convert(int quantity, Unit unit) {
-         return Math.round(quantity*unit.value);
-    }
-
-    public double additionOfTwoUnits(Unit unit1, Unit unit2) {
-        return  (Math.round(unit1.value)+Math.round(unit2.value));
+    public double additionOfTwoUnits(QuantityMeasurement quantityObject1, QuantityMeasurement quantityObject2) {
+        return (quantityObject1.unit.baseUnit * quantityObject1.quantity) +
+                (quantityObject2.unit.baseUnit * quantityObject2.quantity);
     }
 }

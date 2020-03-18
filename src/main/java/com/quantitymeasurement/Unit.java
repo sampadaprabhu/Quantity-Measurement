@@ -1,28 +1,25 @@
 package com.quantitymeasurement;
 
-import java.util.Objects;
-
 public enum Unit {
-    INCH_TO_FEET(0.083),
-    FEET_TO_INCH(12),
-    YARD_TO_FEET(3),
-    INCH_TO_YARD(0.027),
-    YARD_TO_INCH(36),
-    FEET_TO_YARD(0.33),
-    INCH_TO_CENTIMETER(2.5),
-    INCH(2),
-    CENTIMETER_TO_INCH(1),
-    GALLON_TO_LITRE(3.78),
-    LITRE_TO_ML(1000),
-    ML_TO_LITRE(1),
-    KG_TO_GRAMS(1000),
-    TONNE_TO_KG(1000),
-    GRAMS_TO_KG(1),
-    FAHRENHEIT_TO_CELSIUS(0.4717);
-    public double value;
+    INCH(1, UnitType.LENGTH),
+    FEET(12, UnitType.LENGTH),
+    YARD(36, UnitType.LENGTH),
+    CENTIMETER(0.4, UnitType.LENGTH),
+    GALLON(3780, UnitType.VOLUME),
+    LITRE(1000, UnitType.VOLUME),
+    ML(1, UnitType.VOLUME),
+    KG(1000, UnitType.WEIGHT),
+    TONNE(1000000, UnitType.WEIGHT),
+    GRAMS(1, UnitType.WEIGHT),
+    FAHRENHEIT(1, UnitType.TEMPERATURE),
+    CELSIUS(2.12, UnitType.TEMPERATURE);
 
-    Unit(double value) {
-        this.value = value;
+    public final UnitType unitType;
+    public final double baseUnit;
+
+    Unit(double value, UnitType unitType) {
+        this.baseUnit = value;
+        this.unitType = unitType;
     }
 }
 

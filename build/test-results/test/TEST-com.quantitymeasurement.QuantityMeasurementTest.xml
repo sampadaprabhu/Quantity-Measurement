@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.quantitymeasurement.QuantityMeasurementTest" tests="30" skipped="0" failures="0" errors="0" timestamp="2020-03-18T16:22:19" hostname="DESKTOP-QNA62QI" time="0.019">
+  <properties/>
+  <testcase name="givenAdditionOfInchAndCentimeter_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.002"/>
+  <testcase name="given3Feet1Yard_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenCelsiusAndFahrenheit_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenAdditionOf2InchAnd2Inch_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenFeetAndInch_WhenZero_ShouldReturnEqual" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.001"/>
+  <testcase name="givenSameReferenceForSameClass_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenInchValueZero_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given36Inch1Yard_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenKGAndGrams_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenTonneAndKG_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenGallonAndLitres_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenInchValueZero_WhenNotEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenAdditionOf1Feet1Feet_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given1Feet12Inch_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenAdditionOfTonneAndGrams_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenLitreAndMilliLitre_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.001"/>
+  <testcase name="given1Feet1Yard_WhenNotEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.001"/>
+  <testcase name="givenAdditionOf1Feet2Inch_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given12Inch1Feet_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given1Yard36Inch_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given1InchAnd1Feet_WhenNotEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenNullObjectReference_WhenEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenFeetValueZero_WhenNotEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given1Yard3Feet_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.002"/>
+  <testcase name="givenType_WhenNotEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.001"/>
+  <testcase name="givenFeetValueZero_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given1FeetAnd1Inch_WhenNotEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given2Inch5CM_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="given1Inch1Yard_WhenNotEqual_ShouldReturnFalse" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.0"/>
+  <testcase name="givenAdditionOfGallonAndLitre_WhenEqual_ShouldReturnTrue" classname="com.quantitymeasurement.QuantityMeasurementTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
