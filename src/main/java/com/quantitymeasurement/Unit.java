@@ -14,6 +14,7 @@ public enum Unit {
     FAHRENHEIT(1, UnitType.TEMPERATURE),
     CELSIUS(2.12, UnitType.TEMPERATURE);
 
+
     public final UnitType unitType;
     public final double baseUnit;
 

@@ -17,7 +17,6 @@ public class QuantityMeasurementTest {
     public void givenFeetValueZero_WhenNotEqual_ShouldReturnFalse() {
         QuantityMeasurement feet1 = new QuantityMeasurement(12, Unit.FEET);
         QuantityMeasurement feet2 = new QuantityMeasurement(1, Unit.FEET);
-
         Assert.assertNotEquals(feet1, feet2);
     }
 
@@ -107,7 +106,6 @@ public class QuantityMeasurementTest {
 
     @Test
     public void given1Inch1Yard_WhenNotEqual_ShouldReturnFalse() {
-
         QuantityMeasurement yard = new QuantityMeasurement(1, Unit.YARD);
         QuantityMeasurement inch = new QuantityMeasurement(1, Unit.INCH);
         Assert.assertNotEquals(yard, inch);
@@ -145,7 +143,7 @@ public class QuantityMeasurementTest {
     public void givenAdditionOf2InchAnd2Inch_WhenEqual_ShouldReturnTrue() {
         QuantityMeasurement inch1 = new QuantityMeasurement(2, Unit.INCH);
         QuantityMeasurement inch2 = new QuantityMeasurement(2, Unit.INCH);
-        double result = inch1.additionOfTwoUnits(inch1, inch2);
+        double result = inch1.additionOfTwoUnits(inch1, inch2, null);
         Assert.assertEquals(4, result, 0.0);
     }
 
@@ -153,7 +151,7 @@ public class QuantityMeasurementTest {
     public void givenAdditionOf1Feet2Inch_WhenEqual_ShouldReturnTrue() {
         QuantityMeasurement inch = new QuantityMeasurement(2, Unit.INCH);
         QuantityMeasurement feet = new QuantityMeasurement(1, Unit.FEET);
-        double result = inch.additionOfTwoUnits(inch, feet);
+        double result = inch.additionOfTwoUnits(inch, feet, null);
         Assert.assertEquals(14, result, 0.0);
     }
 
@@ -161,7 +159,7 @@ public class QuantityMeasurementTest {
     public void givenAdditionOf1Feet1Feet_WhenEqual_ShouldReturnTrue() {
         QuantityMeasurement inch = new QuantityMeasurement(1, Unit.FEET);
         QuantityMeasurement feet = new QuantityMeasurement(1, Unit.FEET);
-        double result = inch.additionOfTwoUnits(feet, feet);
+        double result = inch.additionOfTwoUnits(feet, feet, null);
         Assert.assertEquals(24, result, 0.0);
     }
 
@@ -169,7 +167,7 @@ public class QuantityMeasurementTest {
     public void givenAdditionOfInchAndCentimeter_WhenEqual_ShouldReturnTrue() {
         QuantityMeasurement inch = new QuantityMeasurement(2, Unit.INCH);
         QuantityMeasurement centimeter = new QuantityMeasurement(2.5, Unit.CENTIMETER);
-        double result = inch.additionOfTwoUnits(inch, centimeter);
+        double result = inch.additionOfTwoUnits(inch, centimeter, null);
         Assert.assertEquals(3, result, 0.0);
     }
 
@@ -182,18 +180,18 @@ public class QuantityMeasurementTest {
 
     @Test
     public void givenLitreAndMilliLitre_WhenEqual_ShouldReturnTrue() {
-        QuantityMeasurement litre = new QuantityMeasurement(3.78, Unit.LITRE);
-        QuantityMeasurement gallon = new QuantityMeasurement(1, Unit.GALLON);
-        double result = gallon.additionOfTwoUnits(litre, gallon);
-        Assert.assertEquals(7560, result, 0.0);
+        QuantityMeasurement litre = new QuantityMeasurement(1, Unit.LITRE);
+        QuantityMeasurement miliLitire = new QuantityMeasurement(1000, Unit.ML);
+        double result = miliLitire.additionOfTwoUnits(litre, miliLitire, OutputUnit.LITRES);
+        Assert.assertEquals(2.00, result, 0.0);
     }
 
     @Test
     public void givenAdditionOfGallonAndLitre_WhenEqual_ShouldReturnTrue() {
-        QuantityMeasurement litre = new QuantityMeasurement(1, Unit.LITRE);
-        QuantityMeasurement miliLitire = new QuantityMeasurement(100, Unit.ML);
-        double result = miliLitire.additionOfTwoUnits(litre, miliLitire);
-        Assert.assertEquals(1100, result, 0.0);
+        QuantityMeasurement litre = new QuantityMeasurement(3.78, Unit.LITRE);
+        QuantityMeasurement gallon = new QuantityMeasurement(1, Unit.GALLON);
+        double result = gallon.additionOfTwoUnits(litre, gallon, OutputUnit.LITRES);
+        Assert.assertEquals(7.560, result, 0.0);
     }
 
 
@@ -215,8 +213,8 @@ public class QuantityMeasurementTest {
     public void givenAdditionOfTonneAndGrams_WhenEqual_ShouldReturnTrue() {
         QuantityMeasurement tonne = new QuantityMeasurement(1, Unit.TONNE);
         QuantityMeasurement grams = new QuantityMeasurement(1000, Unit.GRAMS);
-        double result = grams.additionOfTwoUnits(tonne, grams);
-        Assert.assertEquals(1001000.0, result, 0.0);
+        double result = grams.additionOfTwoUnits(tonne, grams, OutputUnit.KILOGRAMS);
+        Assert.assertEquals(1001, result, 0.0);
     }
 
     @Test
